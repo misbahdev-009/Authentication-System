@@ -38,7 +38,7 @@ app.add_middleware(
     https_only=settings.https_only,
 )
 
-app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
+app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 app.include_router(auth_router)
 
 
